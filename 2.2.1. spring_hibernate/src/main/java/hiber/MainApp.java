@@ -21,8 +21,7 @@ public class MainApp {
       userService.add(new User("Йцукен", "Ячсмить", "user4@mail.ru", new Car("Shrevmolet", 44444)));
 
       List<User> users = userService.listUsers();
-
-      System.out.println("\nList of all users:");
+      System.out.println("List of all users:");
       for (User user : users) {
          System.out.println(user.toString());
       }

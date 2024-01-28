@@ -7,8 +7,9 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+
 @Service
-public class CarServiceImp implements CarService{
+public class CarServiceImp implements CarService {
 
     private final CarDao carDao;
 
@@ -22,12 +23,11 @@ public class CarServiceImp implements CarService{
         carDao.addCar(car);
     }
 
-
     @Override
+    @Transactional(readOnly = true)
     public List<Car> getCars() {
         return carDao.getCars();
     }
-
 
     @Override
     @Transactional(readOnly = true)
